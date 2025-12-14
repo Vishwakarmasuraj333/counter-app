@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .counter-box {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .counter-box h1 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        #counter {
+            font-size: 64px;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #inc {
+            background: #4caf50;
+            color: #fff;
+        }
+
+        #dec {
+            background: #f44336;
+            color: #fff;
+        }
+
+        #res {
+            background: #607d8b;
+            color: #fff;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="counter-box">
+        <h1>Counter App</h1>
+        <label id="counter">0</label>
+
+        <div class="btn-group">
+            <button id="dec">Decrease</button>
+            <button id="res">Reset</button>
+            <button id="inc">Increase</button>
+        </div>
+    </div>
+
+    <script>
+        const inc = document.getElementById("inc");
+        const dec = document.getElementById("dec");
+        const res = document.getElementById("res");
+        const counter = document.getElementById("counter");
+
+        let count = 0;
+
+        inc.onclick = () => {
+            counter.textContent = ++count;
+        };
+
+        dec.onclick = () => {
+            counter.textContent = --count;
+        };
+
+        res.onclick = () => {
+            count = 0;
+            counter.textContent = count;
+        };
+    </script>
+
+</body>
+
+</html>
